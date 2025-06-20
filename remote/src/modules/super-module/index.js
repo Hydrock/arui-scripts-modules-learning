@@ -1,4 +1,4 @@
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';  // вот так — сразу client
 
 let root;
 
