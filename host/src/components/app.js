@@ -15,7 +15,10 @@ const loader = createModuleLoader({
 });
 
 export const App = () => {
-    const { loadingState, targetElementRef } = useModuleMounter({ loader });
+    const { loadingState, targetElementRef } = useModuleMounter({
+        loader,
+        useShadowDom: true,
+    });
     return (
         <div>
             {loadingState === 'pending' && <div>pending...</div>}
