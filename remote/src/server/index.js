@@ -2,16 +2,16 @@ import Hapi from '@hapi/hapi';
 
 
 const init = async () => {
-    const server = Hapi.server({
-        port: 3000,
-        host: '0.0.0.0'
-    });
+  const server = Hapi.server({
+    port: 3001,
+    host: '0.0.0.0'
+  });
 
-    server.route({
-        method: 'GET',
-        path: '/',
-        handler: (request, h) => {
-            return `
+  server.route({
+    method: 'GET',
+    path: '/',
+    handler: (request, h) => {
+      return `
         <!DOCTYPE html>
         <html lang="ru">
           <head>
@@ -25,16 +25,16 @@ const init = async () => {
           </body>
         </html>
       `;
-        }
-    });
+    }
+  });
 
-    await server.start();
-    console.log('Сервер запущен на %s', server.info.uri);
+  await server.start();
+  console.log('Сервер запущен на %s', server.info.uri);
 };
 
 process.on('unhandledRejection', (err) => {
-    console.error(err);
-    process.exit(1);
+  console.error(err);
+  process.exit(1);
 });
 
 init();
