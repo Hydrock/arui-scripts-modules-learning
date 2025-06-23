@@ -18,6 +18,7 @@ export const App = () => {
     const { loadingState, targetElementRef } = useModuleMounter({
         loader,
         useShadowDom: true,
+        runParams: { theme: 'blue', width: 300 },
     });
     return (
         <div>

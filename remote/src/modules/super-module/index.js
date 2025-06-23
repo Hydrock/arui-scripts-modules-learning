@@ -7,7 +7,7 @@ let root;
 export const mount = (targetNode, runParams, serverState) => {
     root = ReactDOM.createRoot(targetNode);
 
-    root.render(<Component />);
+    root.render(<Component runParams={runParams} />);
 }
 
 export const unmount = () => {
